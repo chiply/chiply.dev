@@ -1,0 +1,6 @@
+#+PROPERTY: header-args:python :eval never-export
+#+PROPERTY: header-args:bash :eval never-export
+#+PROPERTY: header-args:mermaid :eval never-export
+#+OPTIONS: html-postamble:nil
+#+OPTIONS: H:6
+

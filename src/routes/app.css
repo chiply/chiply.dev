@@ -1,0 +1,346 @@
+body {
+  font-family: "Sebastian Gothic NBP", monospace;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+li, ul {
+  list-style-position: inside;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+input {
+  font-family: "Sebastian Gothic NBP", monospace;
+  font-size: 2.5em;
+  /* center text */
+  text-align: center;
+}
+
+html {
+  scroll-behavior: smooth;
+  width: 100%;
+}
+
+
+
+#article {
+  overflow: auto;
+}
+
+#article {
+  scroll-behavior: smooth;
+  width: 100%;
+}
+
+@media (min-width: 1000px) {
+  #minimap-content {
+    max-width: 66ch;
+    font-size: 1.4vw;
+  }
+  #article {
+    max-width: 66ch;
+    font-size: 1.4vw;
+  }
+}
+@media (max-width: 1000px) {
+  #article {
+    max-width: 50ch;
+    font-size: 3.8vw;
+  }
+}
+
+#article::-webkit-scrollbar {
+  display: none;
+}
+
+/** sticky ToC **/
+@media (min-width: 1000px) {
+  #table-of-contents {
+    overflow: auto;
+  }
+
+  #table-of-contents h2 {
+    margin: 0;
+  }
+
+  #table-of-contents::-webkit-scrollbar {
+    display: none;
+  }
+
+  #text-table-of-contents a {
+    text-decoration: none;
+    display: block;
+    color: #ccc;
+    transition: all 50ms ease-in-out;
+  }
+
+  #text-table-of-contents a:hover,
+  #text-table-of-contents a:focus {
+    color: #666;
+  }
+
+  #table-of-contents ul,
+  #table-of-contents ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  #text-table-of-contents li.active > a {
+    color: #333;
+    font-weight: bold;
+  }
+}
+
+/** sticky footnotes **/
+@media (min-width: 1000px) {
+  #footnotes {
+    overflow: auto;
+  }
+  #footnotes h2 {
+    margin: 0;
+  }
+
+  #footnotes::-webkit-scrollbar {
+    display: none;
+  }
+
+  #text-footnotes a,
+  #text-footnotes p {
+    text-decoration: none;
+    padding: 0.125rem 0;
+    color: #ccc;
+    /* smooth */
+    transition: all 50ms ease-in-out;
+  }
+
+  #text-footnotes a:hover,
+  #text-footnotes a:focus {
+    color: #666;
+  }
+  #text-footnotes p:hover,
+  #text-footnotes p:focus {
+    color: #666;
+  }
+
+  #text-footnotes ul,
+  #text-footnotes ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  #text-footnotes p.footpara.active {
+    color: #333;
+    font-weight: bold;
+  }
+  #text-footnotes sup a.active {
+    color: blue;
+  }
+}
+
+/** TLDR section **/
+@media (min-width: 1000px) {
+  #content-clone {
+    /* 1% less than needed to prevent weird overflow of iframes */
+    max-width: 60vw;
+    margin-left: 22vw;
+  }
+  #tldr-container {
+    overflow: auto;
+  }
+
+  #tldr-container p {
+    margin: 0;
+  }
+
+  #tldr-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* TLDR link higlights */
+  #tldr-container  {
+    color: #ccc;
+  }
+  #tldr-container a {
+    color: rgb(190, 190, 190);
+    font-weight: bold;
+  }
+
+  #tldr-container a.active {
+    color: #333;
+    font-weight: bold;
+  }
+}
+
+#tldr-container a:hover,
+#tldr-container a:focus {
+  color: #666;
+}
+
+
+/* Minimap styles */
+@media (min-width: 1000px) {
+  #minimap-container {
+    filter: blur(0.1px) grayscale(80%);
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  /* NOTE overflow hidden works, but it causes the main page to
+       scroll for some reason */
+  #minimap {
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+    pointer-events: auto;
+    box-sizing: border-box;
+  }
+
+  #minimap-content {
+    transform-origin: top left;
+    pointer-events: none;
+  }
+
+  #minimap-viewport {
+    position: absolute;
+    box-sizing: border-box;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.12);
+    pointer-events: none;
+  }
+}
+
+/* need both to hide scrollbars */
+#minimap::-webkit-scrollbar {
+  display: none;
+}
+#minimap-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* general */
+@media (min-width: 1000px) {
+  iframe {
+    max-height: 100% !important;
+    max-width: 100%;
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+@media (max-width: 1000px) {
+  iframe {
+    max-height: 100% !important;
+    max-width: 100%;
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+img {
+  max-height: 40% !important;
+  max-width: 80% !important;
+  /* center images */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/** code blocks **/
+pre.src {
+  font-family: "Sebastian Gothic NBP", monospace;
+}
+
+/* on hover, change background of pre.src to white and add a small
+   gray border */
+pre.src {
+  background: rgba(245, 245, 245, 0.8);
+  border: 1px solid rgba(245, 245, 245, 0.8);
+  font-size: 0.9rem;
+}
+
+pre.src:hover {
+  background: white;
+  border: 1px solid rgba(230, 230, 230, 0.8);
+}
+
+/* Responsive design */
+@media (max-width: 1000px) {
+  .desktop-only {
+    display: none;
+  }
+  .mobile-only {
+    display: block;
+  }
+}
+
+.tag * {
+  background-color: #eee;
+}
+
+#tag-container {
+  font-size: 1.2rem;
+}
+
+#tag-container span {
+  color: #ccc;
+}
+
+#tag-container span.active {
+  color: #333;
+  font-weight: bold;
+}
+
+#bibliography-container a {
+  color: #ccc;
+}
+
+#bibliography-container a.active {
+  color: #333;
+  font-weight: bold;
+}
+
+#bibliography-container a:hover {
+  color: #666;
+}
+
+#bibliography-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* foldable headings */
+h2, h3, h4, h5, h6 {
+  font-size: 1.3em;
+}
+
+.outline-6 {cursor: pointer; }
+.outline-6.folded {max-height: 1.5em; background: #f9f9f9; overflow: clip;}
+
+.outline-5 {cursor: pointer; }
+.outline-5.folded {max-height: 1.5em; background: #f9f9f9; overflow: clip;}
+
+.outline-4 {cursor: pointer; }
+.outline-4.folded {max-height: 1.5em; background: #f9f9f9; overflow: clip;}
+
+.outline-3 {cursor: pointer; }
+.outline-3.folded {max-height: 1.5em; background: #f9f9f9; overflow: clip;}
+
+.outline-2 {cursor: pointer; }
+.outline-2.folded {max-height: 1.5em; background: #f9f9f9; overflow: clip;}
+
+#outline-2::-webkit-scrollbar {display: none;}
+#outline-3::-webkit-scrollbar {display: none;}
+#outline-4::-webkit-scrollbar {display: none;}
+#outline-5::-webkit-scrollbar {display: none;}
+#outline-6::-webkit-scrollbar {display: none;}
+
+

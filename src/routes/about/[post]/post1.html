@@ -1,0 +1,701 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-10-30 Thu 11:19 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>post1</title>
+<meta name="author" content="Charles Baker" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">post1</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org9911483">1. narrative</a>
+<ul>
+<li><a href="#org82c97dd">1.1. Long paragraph</a></li>
+<li><a href="#orgc2a8893">1.2. <span class="todo TODO">TODO</span> prompt LLM (is there an org gptel or something similar?)</a></li>
+<li><a href="#org5d5f856">1.3. layout</a></li>
+<li><a href="#orge5d5873">1.4. internal links</a></li>
+<li><a href="#orga854b64">1.5. global header / site style</a></li>
+<li><a href="#org547f87e">1.6. <span class="done DONE">DONE</span> styling</a>
+<ul>
+<li><a href="#orgad84d22">1.6.1. <span class="done DONE">DONE</span> inline css</a></li>
+<li><a href="#org2b8bd0b">1.6.2. <span class="done DONE">DONE</span> org-html-themes</a></li>
+<li><a href="#org6ee4f45">1.6.3. <span class="done DONE">DONE</span> css (see above)</a>
+<ul>
+<li><a href="#org2e22f13">1.6.3.1. <span class="done DONE">DONE</span> global css</a></li>
+<li><a href="#orge8b8f79">1.6.3.2. <span class="done DONE">DONE</span> local css</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org4f1a071">1.7. <span class="todo TODO">TODO</span> basic org stuff</a></li>
+<li><a href="#org52a3d36">1.8. <span class="todo TODO">TODO</span> text</a>
+<ul>
+<li><a href="#orgb808b29">1.8.1. long paragraph</a></li>
+<li><a href="#org164d452">1.8.2. long paragraph scrolling text</a></li>
+<li><a href="#org1ebbbb1">1.8.3. quote</a></li>
+</ul>
+</li>
+<li><a href="#org7f0f979">1.9. tags&#xa0;&#xa0;&#xa0;<span class="tag"><span class="tag0">tag0</span>&#xa0;<span class="tag1">tag1</span></span></a>
+<ul>
+<li><a href="#org84d7e67">1.9.1. <span class="done DONE">DONE</span> test todo item 2</a></li>
+<li><a href="#orga774922">1.9.2. <span class="done DONE">DONE</span> table</a></li>
+<li><a href="#orga474876">1.9.3. <span class="todo TODO">TODO</span> lists</a>
+<ul>
+<li><a href="#orgb20d2d4">1.9.3.1. <span class="todo TODO">TODO</span> bullets</a></li>
+<li><a href="#org72f487d">1.9.3.2. <span class="todo TODO">TODO</span> numbers</a></li>
+</ul>
+</li>
+<li><a href="#orgbe4a6b1">1.9.4. <span class="todo TODO">TODO</span> formatting</a></li>
+</ul>
+</li>
+<li><a href="#orgdaad4a1">1.10. <span class="todo TODO">TODO</span> code</a>
+<ul>
+<li><a href="#orgad7bac2">1.10.1. <span class="todo TODO">TODO</span> bash</a></li>
+<li><a href="#orgaf12815">1.10.2. <span class="todo TODO">TODO</span> python</a>
+<ul>
+<li><a href="#org2c6dc35">1.10.2.1. <span class="todo TODO">TODO</span> using venv</a></li>
+<li><a href="#org1b30a29">1.10.2.2. <span class="todo TODO">TODO</span> using multiple venvs via session</a></li>
+<li><a href="#orgad05d52">1.10.2.3. <span class="todo TODO">TODO</span> using session to pass state between blocks</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgb6c1957">1.11. <span class="todo TODO">TODO</span> video (test with git lfs)</a></li>
+<li><a href="#orgc21f1ce">1.12. <span class="todo TODO">TODO</span> image</a>
+<ul>
+<li><a href="#org13ae1ca">1.12.1. <span class="done DONE">DONE</span> local file</a></li>
+<li><a href="#org9483817">1.12.2. <span class="todo TODO">TODO</span> remote file</a></li>
+<li><a href="#orgbaaa5dd">1.12.3. <span class="todo TODO">TODO</span> svg</a></li>
+</ul>
+</li>
+<li><a href="#org9838c88">1.13. <span class="done DONE">DONE</span> general iframe</a></li>
+<li><a href="#org52a8de3">1.14. <span class="done DONE">DONE</span> plotly chart</a></li>
+<li><a href="#orgec4686c">1.15. <span class="todo TODO">TODO</span> verbs</a></li>
+<li><a href="#orgfe8d240">1.16. <span class="todo TODO">TODO</span> footnotes NOTE issue</a>
+<ul>
+<li><a href="#orgfb55307">1.16.1. Another footnote</a></li>
+</ul>
+</li>
+<li><a href="#orga7abf9f">1.17. <span class="todo TODO">TODO</span> transclude? compose with other file?</a>
+<ul>
+<li><a href="#orgde4bb2e">1.17.1. include from another file</a></li>
+</ul>
+</li>
+<li><a href="#orgc628c24">1.18. <span class="todo TODO">TODO</span> arrange two views next to eachother (eg figure and some figure text) using css grid (might be split between here and css). is ther a way to include the css here? can't we tangle to a file</a></li>
+</ul>
+</li>
+<li><a href="#tldr">2. Generate a TLDR for this document that will be displayed at the top of the static-site version of this document.  Include internal org links to headings in this document where relevant. Org links look like this: *Footnotes. Do not use any bullets for the explanation, but you can use line breaks to help with readability.  Be verbose and describe as many sections as possible</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9911483" class="outline-2">
+<h2 id="org9911483"><span class="section-number-2">1.</span> narrative</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org82c97dd" class="outline-3">
+<h3 id="org82c97dd"><span class="section-number-3">1.1.</span> Long paragraph</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim<sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup> id est laborum.  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?  
+</p>
+</div>
+</div>
+<div id="outline-container-orgc2a8893" class="outline-3">
+<h3 id="orgc2a8893"><span class="section-number-3">1.2.</span> <span class="todo TODO">TODO</span> prompt LLM (is there an org gptel or something similar?)</h3>
+<div class="outline-text-3" id="text-1-2">
+</div>
+</div>
+<div id="outline-container-org5d5f856" class="outline-3">
+<h3 id="org5d5f856"><span class="section-number-3">1.3.</span> layout</h3>
+</div>
+
+<div id="outline-container-orge5d5873" class="outline-3">
+<h3 id="orge5d5873"><span class="section-number-3">1.4.</span> internal links</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+<a href="post1.html">Post 1</a>
+</p>
+</div>
+</div>
+<div id="outline-container-orga854b64" class="outline-3">
+<h3 id="orga854b64"><span class="section-number-3">1.5.</span> global header / site style</h3>
+</div>
+<div id="outline-container-org547f87e" class="outline-3">
+<h3 id="org547f87e"><span class="section-number-3">1.6.</span> <span class="done DONE">DONE</span> styling</h3>
+<div class="outline-text-3" id="text-1-6">
+</div>
+<div id="outline-container-orgad84d22" class="outline-4">
+<h4 id="orgad84d22"><span class="section-number-4">1.6.1.</span> <span class="done DONE">DONE</span> inline css</h4>
+<div class="outline-text-4" id="text-1-6-1">
+<style>
+  .todo { font-family: monospace; color: pink; }
+</style>
+</div>
+</div>
+<div id="outline-container-org2b8bd0b" class="outline-4">
+<h4 id="org2b8bd0b"><span class="section-number-4">1.6.2.</span> <span class="done DONE">DONE</span> org-html-themes</h4>
+<div class="outline-text-4" id="text-1-6-2">
+<p>
+<a href="https://github.com/fniessen/org-html-themes">https://github.com/fniessen/org-html-themes</a>
+<a href="https://github.com/fniessen/org-html-themes/blob/master/examples/org-mode-syntax-example.org">https://github.com/fniessen/org-html-themes/blob/master/examples/org-mode-syntax-example.org</a>
+(using read the docs see above)
+</p>
+</div>
+</div>
+<div id="outline-container-org6ee4f45" class="outline-4">
+<h4 id="org6ee4f45"><span class="section-number-4">1.6.3.</span> <span class="done DONE">DONE</span> css (see above)</h4>
+<div class="outline-text-4" id="text-1-6-3">
+</div>
+<div id="outline-container-org2e22f13" class="outline-5">
+<h5 id="org2e22f13"><span class="section-number-5">1.6.3.1.</span> <span class="done DONE">DONE</span> global css</h5>
+<div class="outline-text-5" id="text-1-6-3-1">
+</div>
+</div>
+<div id="outline-container-orge8b8f79" class="outline-5">
+<h5 id="orge8b8f79"><span class="section-number-5">1.6.3.2.</span> <span class="done DONE">DONE</span> local css</h5>
+<div class="outline-text-5" id="text-1-6-3-2">
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org4f1a071" class="outline-3">
+<h3 id="org4f1a071"><span class="section-number-3">1.7.</span> <span class="todo TODO">TODO</span> basic org stuff</h3>
+<div class="outline-text-3" id="text-1-7">
+</div>
+</div>
+<div id="outline-container-org52a3d36" class="outline-3">
+<h3 id="org52a3d36"><span class="section-number-3">1.8.</span> <span class="todo TODO">TODO</span> text</h3>
+<div class="outline-text-3" id="text-1-8">
+</div>
+<div id="outline-container-orgb808b29" class="outline-4">
+<h4 id="orgb808b29"><span class="section-number-4">1.8.1.</span> long paragraph</h4>
+</div>
+
+<div id="outline-container-org164d452" class="outline-4">
+<h4 id="org164d452"><span class="section-number-4">1.8.2.</span> long paragraph scrolling text</h4>
+</div>
+
+<div id="outline-container-org1ebbbb1" class="outline-4">
+<h4 id="org1ebbbb1"><span class="section-number-4">1.8.3.</span> quote</h4>
+<div class="outline-text-4" id="text-1-8-3">
+<p>
+this is some regular text
+</p>
+<blockquote>
+<p>
+This is some quote
+</p>
+</blockquote>
+
+<p>
+this is some more regular text
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org7f0f979" class="outline-3">
+<h3 id="org7f0f979"><span class="section-number-3">1.9.</span> tags&#xa0;&#xa0;&#xa0;<span class="tag"><span class="tag0">tag0</span>&#xa0;<span class="tag1">tag1</span></span></h3>
+<div class="outline-text-3" id="text-1-9">
+</div>
+<div id="outline-container-org84d7e67" class="outline-4">
+<h4 id="org84d7e67"><span class="section-number-4">1.9.1.</span> <span class="done DONE">DONE</span> test todo item 2</h4>
+</div>
+<div id="outline-container-orga774922" class="outline-4">
+<h4 id="orga774922"><span class="section-number-4">1.9.2.</span> <span class="done DONE">DONE</span> table</h4>
+<div class="outline-text-4" id="text-1-9-2">
+<table id="orgff2afc2" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">a</th>
+<th scope="col" class="org-right">b</th>
+<th scope="col" class="org-right">c</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">2</td>
+<td class="org-right">3</td>
+</tr>
+
+<tr>
+<td class="org-right">4</td>
+<td class="org-right">5</td>
+<td class="org-right">6</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-orga474876" class="outline-4">
+<h4 id="orga474876"><span class="section-number-4">1.9.3.</span> <span class="todo TODO">TODO</span> lists</h4>
+<div class="outline-text-4" id="text-1-9-3">
+</div>
+<div id="outline-container-orgb20d2d4" class="outline-5">
+<h5 id="orgb20d2d4"><span class="section-number-5">1.9.3.1.</span> <span class="todo TODO">TODO</span> bullets</h5>
+<div class="outline-text-5" id="text-1-9-3-1">
+<p>
+NOTE: these render as numbers
+</p>
+<ul class="org-ul">
+<li>one</li>
+<li>two
+<ul class="org-ul">
+<li>two point one</li>
+<li>two point two</li>
+</ul></li>
+<li>three
+<ul class="org-ul">
+<li>three point one</li>
+<li>three point two</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org72f487d" class="outline-5">
+<h5 id="org72f487d"><span class="section-number-5">1.9.3.2.</span> <span class="todo TODO">TODO</span> numbers</h5>
+<div class="outline-text-5" id="text-1-9-3-2">
+<ol class="org-ol">
+<li>first</li>
+<li>second
+<ol class="org-ol">
+<li>second point one</li>
+<li>second point two</li>
+</ol></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-orgbe4a6b1" class="outline-4">
+<h4 id="orgbe4a6b1"><span class="section-number-4">1.9.4.</span> <span class="todo TODO">TODO</span> formatting</h4>
+<div class="outline-text-4" id="text-1-9-4">
+<ul class="org-ul">
+<li>some <b>bold</b> text</li>
+<li>some <i>italic</i> text</li>
+<li>some <span class="underline">underline</span> text</li>
+<li>some <del>strike</del> text</li>
+<li>some <code>code</code> text</li>
+<li>some <code>verbatim</code> text</li>
+<li>some <code>*bold in code*</code> text</li>
+<li>some <code>/italic in verbatim/</code> text</li>
+<li>some <code>_underline in verbatim_</code> text</li>
+<li>some =~code in verbatim=~ text</li>
+<li>some <code>+strike in verbatim+</code> text</li>
+<li>some <b>bold</b> <i>italic</i> <span class="underline">underline</span> <del>strike</del> <code>code</code> <code>verbatim</code> text</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgdaad4a1" class="outline-3">
+<h3 id="orgdaad4a1"><span class="section-number-3">1.10.</span> <span class="todo TODO">TODO</span> code</h3>
+<div class="outline-text-3" id="text-1-10">
+</div>
+<div id="outline-container-orgad7bac2" class="outline-4">
+<h4 id="orgad7bac2"><span class="section-number-4">1.10.1.</span> <span class="todo TODO">TODO</span> bash</h4>
+<div class="outline-text-4" id="text-1-10-1">
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #8f0075;">echo</span> <span style="color: #3548cf;">"hello world"</span>
+</pre>
+</div>
+
+<pre class="example">
+hello world
+</pre>
+</div>
+</div>
+<div id="outline-container-orgaf12815" class="outline-4">
+<h4 id="orgaf12815"><span class="section-number-4">1.10.2.</span> <span class="todo TODO">TODO</span> python</h4>
+<div class="outline-text-4" id="text-1-10-2">
+<ul class="org-ul">
+<li>NOTE: need to set up dir-locals<sup><a id="fnr.2" class="footref" href="#fn.2" role="doc-backlink">2</a></sup></li>
+</ul>
+</div>
+<div id="outline-container-org2c6dc35" class="outline-5">
+<h5 id="org2c6dc35"><span class="section-number-5">1.10.2.1.</span> <span class="todo TODO">TODO</span> using venv</h5>
+<div class="outline-text-5" id="text-1-10-2-1">
+<p>
+This is how you write code with python<sup><a id="fnr.3" class="footref" href="#fn.3" role="doc-backlink">3</a></sup>
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">from</span> dataclasses <span style="color: #531ab6;">import</span> dataclass
+
+<span style="color: #531ab6;">from</span> polyfactory.factories <span style="color: #531ab6;">import</span> DataclassFactory
+
+
+<span style="color: #005f5f;">@dataclass</span>
+<span style="color: #531ab6;">class</span> <span style="color: #005f5f;">Person</span>:
+    name: <span style="color: #8f0075;">str</span>
+    age: <span style="color: #8f0075;">float</span>
+    height: <span style="color: #8f0075;">float</span>
+    weight: <span style="color: #8f0075;">float</span>
+
+
+<span style="color: #531ab6;">class</span> <span style="color: #005f5f;">PersonFactory</span><span style="color: #000000;">(</span>DataclassFactory<span style="color: #dd22dd;">[</span>Person<span style="color: #dd22dd;">]</span><span style="color: #000000;">)</span>:
+    ...
+
+
+<span style="color: #005e8b;">person_instance</span> <span style="color: #000000;">=</span> PersonFactory.build<span style="color: #000000;">()</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span>person_instance<span style="color: #000000;">)</span>
+
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">'hello'</span><span style="color: #000000;">)</span>
+
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-python">Person<span style="color: #000000;">(</span>name<span style="color: #000000;">=</span><span style="color: #3548cf;">'SwakNxbRpljCzuodDFmA'</span>, age<span style="color: #000000;">=</span>169.373223815888, height<span style="color: #000000;">=</span>20020364164560.4, weight<span style="color: #000000;">=-</span>16466.5531537472<span style="color: #000000;">)</span>
+hello
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org1b30a29" class="outline-5">
+<h5 id="org1b30a29"><span class="section-number-5">1.10.2.2.</span> <span class="todo TODO">TODO</span> using multiple venvs via session</h5>
+<div class="outline-text-5" id="text-1-10-2-2">
+</div>
+</div>
+<div id="outline-container-orgad05d52" class="outline-5">
+<h5 id="orgad05d52"><span class="section-number-5">1.10.2.3.</span> <span class="todo TODO">TODO</span> using session to pass state between blocks</h5>
+<div class="outline-text-5" id="text-1-10-2-3">
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb6c1957" class="outline-3">
+<h3 id="orgb6c1957"><span class="section-number-3">1.11.</span> <span class="todo TODO">TODO</span> video (test with git lfs)</h3>
+<div class="outline-text-3" id="text-1-11">
+</div>
+</div>
+<div id="outline-container-orgc21f1ce" class="outline-3">
+<h3 id="orgc21f1ce"><span class="section-number-3">1.12.</span> <span class="todo TODO">TODO</span> image</h3>
+<div class="outline-text-3" id="text-1-12">
+</div>
+<div id="outline-container-org13ae1ca" class="outline-4">
+<h4 id="org13ae1ca"><span class="section-number-4">1.12.1.</span> <span class="done DONE">DONE</span> local file</h4>
+<div class="outline-text-4" id="text-1-12-1">
+
+<div id="orgce2f230" class="figure">
+<p><img src="../images/test-image.png" alt="test-image.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org9483817" class="outline-4">
+<h4 id="org9483817"><span class="section-number-4">1.12.2.</span> <span class="todo TODO">TODO</span> remote file</h4>
+<div class="outline-text-4" id="text-1-12-2">
+</div>
+</div>
+<div id="outline-container-orgbaaa5dd" class="outline-4">
+<h4 id="orgbaaa5dd"><span class="section-number-4">1.12.3.</span> <span class="todo TODO">TODO</span> svg</h4>
+<div class="outline-text-4" id="text-1-12-3">
+</div>
+</div>
+</div>
+<div id="outline-container-org9838c88" class="outline-3">
+<h3 id="org9838c88"><span class="section-number-3">1.13.</span> <span class="done DONE">DONE</span> general iframe</h3>
+<div class="outline-text-3" id="text-1-13">
+<iframe src="https://example.com" width="100%" height="600"></iframe>
+</div>
+</div>
+<div id="outline-container-org52a8de3" class="outline-3">
+<h3 id="org52a8de3"><span class="section-number-3">1.14.</span> <span class="done DONE">DONE</span> plotly chart</h3>
+<div class="outline-text-3" id="text-1-14">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> plotly.express <span style="color: #531ab6;">as</span> px
+<span style="color: #531ab6;">import</span> pandas <span style="color: #531ab6;">as</span> pd
+
+<span style="color: #005e8b;">df</span> <span style="color: #000000;">=</span> pd.DataFrame<span style="color: #000000;">(</span><span style="color: #dd22dd;">{</span>
+    <span style="color: #3548cf;">"Fruit"</span>: <span style="color: #008899;">[</span><span style="color: #3548cf;">"Apples"</span>, <span style="color: #3548cf;">"Oranges"</span>, <span style="color: #3548cf;">"Bananas"</span>, <span style="color: #3548cf;">"Apples"</span>, <span style="color: #3548cf;">"Oranges"</span>, <span style="color: #3548cf;">"Bananas"</span><span style="color: #008899;">]</span>,
+    <span style="color: #3548cf;">"Amount"</span>: <span style="color: #008899;">[</span>4, 1, 2, 2, 4, 5<span style="color: #008899;">]</span>,
+    <span style="color: #3548cf;">"City"</span>: <span style="color: #008899;">[</span><span style="color: #3548cf;">"SF"</span>, <span style="color: #3548cf;">"SF"</span>, <span style="color: #3548cf;">"SF"</span>, <span style="color: #3548cf;">"Montreal"</span>, <span style="color: #3548cf;">"Montreal"</span>, <span style="color: #3548cf;">"Montreal"</span><span style="color: #008899;">]</span>
+<span style="color: #dd22dd;">}</span><span style="color: #000000;">)</span>
+
+<span style="color: #005e8b;">fig</span> <span style="color: #000000;">=</span> px.bar<span style="color: #000000;">(</span>df, x<span style="color: #000000;">=</span><span style="color: #3548cf;">"Fruit"</span>, y<span style="color: #000000;">=</span><span style="color: #3548cf;">"Amount"</span>, color<span style="color: #000000;">=</span><span style="color: #3548cf;">"City"</span>, barmode<span style="color: #000000;">=</span><span style="color: #3548cf;">"group"</span><span style="color: #000000;">)</span>
+
+<span style="color: #7fff7fff7fff;"># </span><span style="color: #7fff7fff7fff;">write to html file
+</span>fig.write_html<span style="color: #000000;">(</span><span style="color: #3548cf;">"../static/my_interactive_plot.html"</span><span style="color: #000000;">)</span>
+</pre>
+</div>
+
+<p>
+insert iframe to chart
+</p>
+<iframe src="../my_interactive_plot.html" width="100%" height="600"></iframe>
+</div>
+</div>
+<div id="outline-container-orgec4686c" class="outline-3">
+<h3 id="orgec4686c"><span class="section-number-3">1.15.</span> <span class="todo TODO">TODO</span> verbs</h3>
+<div class="outline-text-3" id="text-1-15">
+</div>
+</div>
+<div id="outline-container-orgfe8d240" class="outline-3">
+<h3 id="orgfe8d240"><span class="section-number-3">1.16.</span> <span class="todo TODO">TODO</span> footnotes NOTE issue</h3>
+<div class="outline-text-3" id="text-1-16">
+<p>
+This is a footnote<sup><a id="fnr.4" class="footref" href="#fn.4" role="doc-backlink">4</a></sup>.  And this is some other text
+</p>
+</div>
+<div id="outline-container-orgfb55307" class="outline-4">
+<h4 id="orgfb55307"><span class="section-number-4">1.16.1.</span> Another footnote</h4>
+<div class="outline-text-4" id="text-1-16-1">
+<p>
+More<sup><a id="fnr.5" class="footref" href="#fn.5" role="doc-backlink">5</a></sup> footnotes<sup><a id="fnr.6" class="footref" href="#fn.6" role="doc-backlink">6</a></sup>.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orga7abf9f" class="outline-3">
+<h3 id="orga7abf9f"><span class="section-number-3">1.17.</span> <span class="todo TODO">TODO</span> transclude? compose with other file?</h3>
+<div class="outline-text-3" id="text-1-17">
+</div>
+<div id="outline-container-orgde4bb2e" class="outline-4">
+<h4 id="orgde4bb2e"><span class="section-number-4">1.17.1.</span> include from another file</h4>
+</div>
+</div>
+<div id="outline-container-orgc628c24" class="outline-3">
+<h3 id="orgc628c24"><span class="section-number-3">1.18.</span> <span class="todo TODO">TODO</span> arrange two views next to eachother (eg figure and some figure text) using css grid (might be split between here and css). is ther a way to include the css here? can't we tangle to a file</h3>
+</div>
+</div>
+<div id="outline-container-tldr" class="outline-2">
+<h2 id="tldr"><span class="section-number-2">2.</span> Generate a TLDR for this document that will be displayed at the top of the static-site version of this document.  Include internal org links to headings in this document where relevant. Org links look like this: <a href="#org03c9038"></a>. Do not use any bullets for the explanation, but you can use line breaks to help with readability.  Be verbose and describe as many sections as possible</h2>
+<div class="outline-text-2" id="text-tldr">
+<p>
+lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+</p>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1" role="doc-backlink">1</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+new footnote 
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2" role="doc-backlink">2</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+lorem impsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3" role="doc-backlink">3</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+This is how to write code with python 
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.4" class="footnum" href="#fnr.4" role="doc-backlink">4</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+This is the footnote.  lorem impsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <b>Excepteur sint occaecat cupidatat</b> non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.5" class="footnum" href="#fnr.5" role="doc-backlink">5</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+even more 
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.6" class="footnum" href="#fnr.6" role="doc-backlink">6</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+More footnotes 
+</p></div></div>
+
+
+</div>
+</div></div>
+</body>
+</html>
