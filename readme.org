@@ -1,8 +1,9 @@
 TODO
 - [X] mobile
-- [ ] new url
-- [ ] deploy to url (new use chiply.dev)
-- [ ] gha for deploying to vercel (for prd deployments)
+- [X] new url
+- [X] deploy to url (new use chiply.dev)
+  - no need for GHA as there is direct GH integration -- set up through vercel.  pushes to `preview` trigger preview deployments (to `chiply-dev.dev`) and pushes to `main` (should occur via a pull request, or can just merge locally) trigger production deployments (to `chiply.dev`) -- note the dev URL needs to be authenticated, the PRD one is live and dooesn't need to be authed
+    - [X] (CANCELLED) gha for deploying to vercel (for prd deployments)
 - [ ] refactor
 - [ ] images
 
