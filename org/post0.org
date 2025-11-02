@@ -2,7 +2,7 @@
 #+INCLUDE: "./boilerplate.org"
 #+EXPORT_FILE_NAME: ../src/routes/about/[post]/post0
 
-NOTE Most code org and html boilerplate is imported from boilerplate.org
+NOTE Most! code org and html boilerplate is imported from boilerplate.org
 NOTE #+OPTIONS: H:6 makes the exporter create outline-containers beyond the default 4 levels (this is needed for folding)
 
 * gif
