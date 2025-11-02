@@ -3,7 +3,24 @@
 - [X] deploy to url (new use chiply.dev)
   - no need for GHA as there is direct GH integration -- set up through vercel.  pushes to `preview` trigger preview deployments (to `chiply-dev.dev`) and pushes to `main` (should occur via a pull request, or can just merge locally) trigger production deployments (to `chiply.dev`) -- note the dev URL needs to be authenticated, the PRD one is live and dooesn't need to be authed
     - [X] (CANCELLED) gha for deploying to vercel (for prd deployments)
+- [ ] get env set up for svelte stuff (lsp + webmode etc...)
+  - navigation
+  - find refs
+  - autocompletion for JS stuff
+  - autocompletion for tags
+  - emmet?
+- [ ] setup up todo configuration in this file to allow for capturing todo data (don't worry about anything more intense than that for now) -- can link commits to the item when marking it as done
+
+- [ ] add jquery
+  
 - [ ] refactor
+  - isWide over isMobile and make this state
+  - remove unnecessary onMount lifecyle hooks.  understand exactly what is happening when they're used together
+  - rebuild as much of the extracted component to give Svelte more control over the DOM (eg getting the CSS to actually work)
+    - migrate css from global to component level
+  - better understanding of layout and make changes if it makes sense in my app
+
+    
 - [ ] images
 
 * Design notes
