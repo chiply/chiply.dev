@@ -1,4 +1,3 @@
-TODO
 - [X] mobile
 - [X] new url
 - [X] deploy to url (new use chiply.dev)

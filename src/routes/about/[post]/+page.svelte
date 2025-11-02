@@ -49,7 +49,7 @@
                     <div id="tags-and-tldr">
                         <Tags {post} />
                         <Tldr {post} />
-                        <Graph />
+                        <!-- <Graph /> -->
                     </div>
                     <Minimap {post} />
                 {/if}
@@ -117,6 +117,6 @@
     #tags-and-tldr {
         display: grid;
         width: 100%;
-        grid-template-rows: 10% 60% 30%;
+        grid-template-rows: 10% 90%;
     }
 </style>
