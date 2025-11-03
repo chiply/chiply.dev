@@ -43,24 +43,24 @@
       <div id="article-info">
         <div id="left-sidebar">
           {#if articleMounted}
-            <ToC {post} />
-            <Footnotes {post} />
+            <ToC {post} {isWide} />
+            <Footnotes {post} {isWide} />
           {/if}
         </div>
         <Article {post} on:mounted={handleArticleMounted} />
         <div id="tags-and-tldr">
           {#if articleMounted}
-            <Tags {post} />
-            <Tldr {post} />
+            <Tags {post} {isWide} />
+            <Tldr {post} {isWide} />
             <!-- <Graph /> -->
           {/if}
         </div>
         {#if articleMounted}
-          <Minimap {post} />
+          <Minimap {post} {isWide} />
         {/if}
       </div>
       {#if articleMounted}
-        <Bibliography {post} />
+        <Bibliography {post} {isWide} />
       {/if}
       <div>Modeline</div>
     </div>

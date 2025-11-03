@@ -1,44 +1,45 @@
 <script lang="ts">
- import { createEventDispatcher } from "svelte";
- import { onMount } from "svelte";
- import j$ from "jquery";
+  // imports
+  import { createEventDispatcher } from "svelte";
+  import j$ from "jquery";
 
- const dispatch = createEventDispatcher();
- let { post } = $props();
- let container;
+  // props and variables
+  const dispatch = createEventDispatcher();
+  let { post } = $props();
+  let container;
 
- $effect(() => {
-     if (post.querySelector("title") && !(post.querySelector("title").text === "my-svelte-project")) {
-         const clone = j$(post.cloneNode(true));
-         const toRemove = ["h1.title", "#table-of-contents", "#outline-container-tldr", "#footnotes"];
+  // define functions
+  const removeSelectors = (clone$) => {
+    for (let selector of [
+      "h1.title",
+      "#table-of-contents",
+      "#outline-container-tldr",
+      "#footnotes",
+    ]) {
+      clone$.find(selector).remove();
+    }
+    return clone$;
+  };
 
-         for (const selector of toRemove) {
-             clone.find(selector).remove();
-         }
+  const toggleFolded = (e) => {
+    e.stopPropagation();
+    j$(this).toggleClass("folded");
+  };
 
-         container.innerHTML = clone.find("#content").html();
-         dispatch("mounted");
-
-         const attachFoldableDivs = () => {
-             div.addEventListener("click", function () {
-                 event.stopPropagation(); // Prevents the event from bubbling up to parent divs
-                 this.classList.toggle("folded");
-             });
-         };
-
-         j$('[class^="outline-"]').on('click', function (event) {
-             event.stopPropagation(); // Prevents the event from bubbling up to parent divs
-             j$(this).toggleClass("folded");
-         });
-     };
- });
+  $effect(() => {
+    let clone$ = j$(post).clone();
+    clone$ = removeSelectors(clone$);
+    container.innerHTML = clone$.find("#content").html();
+    dispatch("mounted");
+    j$('[class^="outline-"]').on("click", toggleFolded);
+  });
 </script>
 
 <div bind:this={container} id="article"></div>
 
 <style>
- #article {
-     overflow-x: hidden;
-     overflow-y: auto;
- }
+  #article {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
 </style>

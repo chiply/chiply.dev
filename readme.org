@@ -1,19 +1,31 @@
+- // NOTE with the dev tools setup, currently using old svelte-mode and it seems to switch on type-script mode... not sure why, should give ts another go.
+
 - [X] mobile
 - [X] new url
 - [X] deploy to url (new use chiply.dev)
   - no need for GHA as there is direct GH integration -- set up through vercel.  pushes to `preview` trigger preview deployments (to `chiply-dev.dev`) and pushes to `main` (should occur via a pull request, or can just merge locally) trigger production deployments (to `chiply.dev`) -- note the dev URL needs to be authenticated, the PRD one is live and dooesn't need to be authed
     - [X] (CANCELLED) gha for deploying to vercel (for prd deployments)
+- [X] add jquery
+  
+- [ ] refacotring -- why do tthe effect need to be arranged in the way it is (effect -> onmount, with page contentt mutated outside of the onmouont) will likely need gpt for this
+
+- [ ] full jquery migration (still need to do tags, bib)
+
+- [ ] use same pattern of container html everywhere
+
 - [ ] get env set up for svelte stuff (lsp + webmode etc...)
   - navigation
   - find refs
   - autocompletion for JS stuff
   - autocompletion for tags
   - emmet?
+  - current state -- using a weird mashup of svelte-mode (not svlete-ts-mode as i couldn't gett the grgammar insttalled).  note you'll see typescript-mode when the buffers are activated, but this is actutally sveltte-mode defined in ttypsecript mode? (see thte C-h m)... but this works well enough for now...
+
 - [ ] setup up todo configuration in this file to allow for capturing todo data (don't worry about anything more intense than that for now) -- can link commits to the item when marking it as done
 
-- [ ] add jquery
   
 - [ ] refactor
+  - LEFTOFF - leftoff on going through each file as high level, got to article (added jquery), haven't touched the other compoonents yet
   - isWide over isMobile and make this state
   - remove unnecessary onMount lifecyle hooks.  understand exactly what is happening when they're used together
   - rebuild as much of the extracted component to give Svelte more control over the DOM (eg getting the CSS to actually work)

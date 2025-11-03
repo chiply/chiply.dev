@@ -1,79 +1,70 @@
-<script>
+<script lang="ts">
+  // imports
   import { onMount } from "svelte";
-  let { post } = $props();
+  import j$ from "jquery";
+
+  // props and variables
+  let { post, isWide } = $props();
+  let container = $state();
+
+  const callback = (entries) => {
+    entries.forEach((entry) => {
+      // if href does not contain http, skip
+      if (!entry.target.getAttribute("href").includes("http")) {
+        return;
+      }
+
+      var id = entry.target.getAttribute("href");
+
+      var fnLink = document.querySelector(
+        `#bibliography-container a[href="${id}"]`,
+      );
+      if (fnLink) {
+        const action = entry.intersectionRatio > 0 ? "add" : "remove";
+        fnLink.classList[action]("active");
+
+        // Scroll active link into view
+        if (entry.intersectionRatio > 0) {
+          fnLink.scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+          });
+        }
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver(callback);
+
+  const addObservers = () => {
+    const headings = [...document.querySelectorAll("#article a")];
+
+    headings.forEach((heading) => observer.observe(heading));
+  };
 
   $effect(() => {
-    // query all a tags with href containing http
-    const bibContainer = document.getElementById("bibliography-container");
-    bibContainer.innerHTML = "";
-
-    const bibLinks = post.querySelectorAll(
-      '#content a[href*="http"]'
-    );
-    // add bib links to container
-    bibLinks.forEach((link, index) => {
-      const bibElement = document.createElement("span");
-      bibElement.className = "bibliography-entry";
-      bibElement.innerHTML = `${
-        link.outerHTML
-      } `;
-      bibContainer.appendChild(bibElement);
-    });
-    // Follawable footnotes
-  var isMobile = window.matchMedia("(min-width: 1000px)").matches;
-
-  if (isMobile) {
-
-    // Followable, scrollable footnotes
-    onMount(() => {
-
-    const observerCallbackFootnotes = (entries) => {
-      entries.forEach((entry) => {
-        // if href does not contain http, skip
-        if (!entry.target.getAttribute("href").includes("http")) {
-          return;
-        }
-
-        var id = entry.target.getAttribute("href");
-
-        var fnLink = document
-          .querySelector(`#bibliography-container a[href="${id}"]`)
-        if (fnLink) {
-          const action = entry.intersectionRatio > 0 ? "add" : "remove";
-          fnLink.classList[action]("active");
-
-          // Scroll active link into view
-          if (entry.intersectionRatio > 0) {
-            fnLink.scrollIntoView({
-              behavior: "smooth",
-              block: "center",
-            });
-          }
-        }
+    if (isWide) {
+      // query all a tags with href containing http
+      const bibLinks = post.querySelectorAll('#content a[href*="http"]');
+      // add bib links to container
+      bibLinks.forEach((link, index) => {
+        const bibElement = document.createElement("span");
+        bibElement.className = "bibliography-entry";
+        bibElement.innerHTML = `${link.outerHTML} `;
+        container.appendChild(bibElement);
       });
-    };
-      
-      const observer = new IntersectionObserver(observerCallbackFootnotes);
 
-      // Collect all headings and outline divs
-      const headings = [...document.querySelectorAll("#article a")];
-
-      headings.forEach((heading) => observer.observe(heading));
-    });
-  }
+      onMount(() => {
+        addObservers();
+      });
+    }
   });
-
-
-  
-
 </script>
 
-
-<div id="bibliography-container"></div>
+<div bind:this={container} id="bibliography-container"></div>
 
 <style>
   #bibliography-container {
-  overflow-y: auto;
+    overflow-y: auto;
   }
-
 </style>
