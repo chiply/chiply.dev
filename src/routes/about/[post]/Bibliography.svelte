@@ -44,6 +44,7 @@
 
   $effect(() => {
     if (isWide) {
+      container.innerHTML = "";
       // query all a tags with href containing http
       const bibLinks = post.querySelectorAll('#content a[href*="http"]');
       // add bib links to container
