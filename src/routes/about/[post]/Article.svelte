@@ -21,9 +21,10 @@
     return clone$;
   };
 
-  const toggleFolded = (e) => {
+  const toggleFold = (e) => {
     e.stopPropagation();
-    j$(this).toggleClass("folded");
+    // toggle class on the clicked element folded
+    j$(e.currentTarget).toggleClass("folded");
   };
 
   $effect(() => {
@@ -31,7 +32,7 @@
     clone$ = removeSelectors(clone$);
     container.innerHTML = clone$.find("#content").html();
     dispatch("mounted");
-    j$('[class^="outline-"]').on("click", toggleFolded);
+    j$(container).find('[class^="outline-"]').on("click", toggleFold);
   });
 </script>
 

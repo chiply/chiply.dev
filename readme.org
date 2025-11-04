@@ -1,4 +1,12 @@
-- // NOTE with the dev tools setup, currently using old svelte-mode and it seems to switch on type-script mode... not sure why, should give ts another go.
+- pre publication checklist
+  - remove tldr title from toc
+  - double check mobile experience and add necessary compoonents
+  - polish the sample articles
+  - modline to contain links for (to be inserted in post0)
+    - reddit / youtube / twitter / hn / mastodon / linkedin
+    - link to github code
+    - link to github change history for this article
+    - icons should render only if a link is availble
 
 - [X] mobile
 - [X] new url
@@ -7,33 +15,33 @@
     - [X] (CANCELLED) gha for deploying to vercel (for prd deployments)
 - [X] add jquery
   
-- [ ] refacotring -- why do tthe effect need to be arranged in the way it is (effect -> onmount, with page contentt mutated outside of the onmouont) will likely need gpt for this
-
-- [ ] full jquery migration (still need to do tags, bib)
-
-- [ ] use same pattern of container html everywhere
-
-- [ ] get env set up for svelte stuff (lsp + webmode etc...)
+- [X] get env set up for svelte stuff (lsp + webmode etc...)
   - navigation
   - find refs
   - autocompletion for JS stuff
   - autocompletion for tags
   - emmet?
   - current state -- using a weird mashup of svelte-mode (not svlete-ts-mode as i couldn't gett the grgammar insttalled).  note you'll see typescript-mode when the buffers are activated, but this is actutally sveltte-mode defined in ttypsecript mode? (see thte C-h m)... but this works well enough for now...
+    
+- [X] initial refactor including jquery
+  - [X] isWide over isMobile and make this state
+  - [X] remove unnecessary onMount lifecyle hooks.  understand exactly what is happening when they're used together: A: i still dono't fully understand but my issue is relatetd to my use case.  i'm calling onmount inside effect which is an antipattern, but it's the only way i can get it to work
 
 - [ ] setup up todo configuration in this file to allow for capturing todo data (don't worry about anything more intense than that for now) -- can link commits to the item when marking it as done
 
-  
-- [ ] refactor
-  - LEFTOFF - leftoff on going through each file as high level, got to article (added jquery), haven't touched the other compoonents yet
-  - isWide over isMobile and make this state
-  - remove unnecessary onMount lifecyle hooks.  understand exactly what is happening when they're used together
-  - rebuild as much of the extracted component to give Svelte more control over the DOM (eg getting the CSS to actually work)
+- [ ] refacotring -- why do tthe effect need to be arranged in the way it is (effect -> onmount, with page contentt mutated outside of the onmouont) will likely need gpt for this
+  - [ ] full jquery migration (still need to do tags, bib)
+  - [ ] use same pattern of container html everywhere
+  - [ ] rebuild as much of the extracted component to give Svelte more control over the DOM (eg getting the CSS to actually work)
     - migrate css from global to component level
-  - better understanding of layout and make changes if it makes sense in my app
-
+  - [ ] figure out hwo to remove onmount, it has something to do with the observers
+  - [ ] better understanding of layout and make changes if it makes sense in my app
     
-- [ ] images
+- [ ] image optimizatiion?  delay thiis?
+
+- [ ] plotly via json not html
+
+- [ ] sqlite containing html for use via wasm
 
 * Design notes
 - Start from simple HTML rendering of an org document -- resist urge to use fancy frameworks.  Re-style at the CSS, JS levels
