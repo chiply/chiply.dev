@@ -12,9 +12,9 @@
   - [ ] make title work (eg whatever is displayed in post.org) (simply add title back in, that's sufficient for now)
     
 
-  - [ ] sample articles
+  - [-] sample articles
     - [ ] polish the sample articles
-    - [ ] fix homepage -- page1 links to post0
+    - [X] fix homepage -- page1 links to post0
     - [ ] .org for index.html, should be another article
       - [ ] automatically build data list from this
     
