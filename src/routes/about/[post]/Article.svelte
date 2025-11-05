@@ -11,7 +11,6 @@
   // define functions
   const removeSelectors = (clone$) => {
     for (let selector of [
-      "h1.title",
       "#outline-container-socials",
       "#table-of-contents",
       "#outline-container-tldr",
