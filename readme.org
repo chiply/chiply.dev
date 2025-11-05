@@ -1,12 +1,30 @@
-- pre publication checklist
-  - remove tldr title from toc
-  - double check mobile experience and add necessary compoonents
-  - polish the sample articles
-  - modline to contain links for (to be inserted in post0)
-    - reddit / youtube / twitter / hn / mastodon / linkedin
-    - link to github code
-    - link to github change history for this article
-    - icons should render only if a link is availble
+- [-] pre publication checklist
+  - [X] modeline to contain links for (to be inserted in post0)
+    - [X] reddit / youtube / twitter / hn / mastodon / linkedin
+    - [X] link to github code
+    - [X] link to github change history for this article
+    - [X] icons should render only if a link is availble
+  - [X] add modeline to mobile
+
+  - [X] add home button to navbar (next to search) (eventually will add iframe for clicking link in index from anywhere)
+  - [X] remove tldr title from toc
+  - [ ] pull routes out of about
+  - [ ] make title work (eg whatever is displayed in post.org) (simply add title back in, that's sufficient for now)
+    
+
+  - [ ] sample articles
+    - [ ] polish the sample articles
+    - [ ] fix homepage -- page1 links to post0
+    - [ ] .org for index.html, should be another article
+      - [ ] automatically build data list from this
+    
+  - [ ] double check mobile experience and add necessary compoonents
+  - [ ] final styling
+    - [ ] font size
+    - [ ] padding
+    - [ ] all hover
+    - [ ] uniform styling for links
+
 
 - [X] mobile
 - [X] new url

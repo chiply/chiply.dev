@@ -1,4 +1,4 @@
-#+TITLE: post0
+#+TITLE: Demo blog post built with emacs org-mode and SvelteKit
 #+INCLUDE: "./boilerplate.org"
 #+EXPORT_FILE_NAME: ../src/routes/about/[post]/post0
 
@@ -1320,6 +1320,32 @@ Basic Org constructs are featured under [[*basic org stuff]], including [[*tags]
 There's also coverage of internal [[*verbs][verbatim and code syntax]], proper handling of [[*footnotes][footnotes with references]], and ideas for future transclusion and file composition.
 
 Document concludes with a detailed [[*Footnotes][footnotes section]] and plans for CSS-driven layout enhancements, including arranging multiple views or panels side by side (figures + captions) using CSS grid.
+
+* socials
+:PROPERTIES:
+:CUSTOM_ID: socials
+:END:
+
+** [[https://www.reddit.com/r/emacs/comments/1oo66rd/impress_other_writers_with_productive/][Impress other writers with productive transparency (slightly hacky but works for me)]]
+
+** [[https://news.ycombinator.com/item?id=45812606][Pg_lake: Postgres with Iceberg and data lake access]]
+
+** [[https://www.youtube.com/watch?v=XPeN5pvH5sU&list=PLAXgYzDMtq7up58JrlnDfKk6YHLsiV1pA&index=3][home owner's insurance explained]]
+
+** [[https://www.linkedin.com/in/charlie-baker-chiply/][LinkedIn]]
+
+** [[https://infosec.exchange/@briankrebs/115492323685742823][my mastodon post]]
+
+** [[https://github.com/chiply/chiply.dev/blob/main/org/post0.org][github post code]]
+
+** home
+#+begin_export html
+<a href="index.html" >Home</a>
+#+end_export
+
+** [[https://github.com/chiply/chiply.dev/commits/main/org/post0.org][github post history]]
+
+** TWITTER
 
 
 

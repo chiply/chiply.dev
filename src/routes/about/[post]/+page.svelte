@@ -13,7 +13,8 @@
   import Tags from "./Tags.svelte";
   import Bibliography from "./Bibliography.svelte";
   import ProgressBar from "./ProgressBar.svelte";
-  import Graph from "./Graph.svelte";
+  import Modeline from "./Modeline.svelte";
+  //import Graph from "./Graph.svelte";
 
   // parser for HTML strings
   const parser = new DOMParser();
@@ -24,22 +25,24 @@
   // tracking if article is mounted
   let articleMounted = $state(false);
   function handleArticleMounted() {
-  articleMounted = true;
+    articleMounted = true;
   }
 
   // data
   let { data }: PageProps = $props();
   let post = $derived(
-  parser.parseFromString(data.posts[data.postTitle], "text/html"),
+    parser.parseFromString(data.posts[data.postTitle], "text/html"),
   );
 </script>
 
 <main>
-  
   {#if isWide === true}
     <div id="pane">
       <ProgressBar />
-      <Navbar postTitle={data.postTitle} />
+      <div id="navbar-container">
+        <span id="home-button"><a href="../"><i class="fa-solid fa-house"></i></a></span>
+        <Navbar postTitle={data.postTitle} />
+      </div>
       <div id="article-info">
         <div id="left-sidebar">
           {#if articleMounted}
@@ -62,21 +65,18 @@
       {#if articleMounted}
         <Bibliography {post} {isWide} />
       {/if}
-      <div>Modeline</div>
+      <Modeline {post} {isWide} />
     </div>
   {/if}
 
-{#if isWide === false}
-  <div id="pane">
-    <div id="article-info">
-      <ArticleNarrow
-        post={post}
-        on:mounted={handleArticleMounted}
-        />
+  {#if isWide === false}
+    <div id="pane">
+      <div id="article-info">
+        <ArticleNarrow {post} on:mounted={handleArticleMounted} />
+      </div>
+      <Modeline {post} {isWide} />
     </div>
-  </div>
-{/if}
-
+  {/if}
 </main>
 
 <style>
@@ -91,9 +91,23 @@
   @media (max-width: 1000px) {
     #pane {
       display: grid;
-      grid-template-rows: 100%;
+      grid-template-rows: 95% 5%;
       height: 100vh;
       width: 100vw;
+    }
+  }
+
+  @media (min-width: 1000px) {
+    #navbar-container {
+      display: grid;
+      grid-template-columns: 3% 97%;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    #navbar-container {
+      display: grid;
+      grid-template-columns: 100%;
     }
   }
 
@@ -125,5 +139,11 @@
     display: grid;
     width: 100%;
     grid-template-rows: 10% 90%;
+  }
+
+  #home-button {
+    text-align: left;
+    padding-top: 0.5rem;
+    font-size: 1.5rem;
   }
 </style>

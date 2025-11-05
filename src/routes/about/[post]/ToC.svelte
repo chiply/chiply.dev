@@ -78,9 +78,20 @@
     headings.forEach((heading) => observer.observe(heading));
   };
 
+  const removeSelectors = (clone$) => {
+    for (let selector of [
+  'a[href="#tldr"]',
+  'a[href="#socials"]'
+    ]) {
+      clone$.find(selector).parent().remove();
+    }
+    return clone$;
+  };
+
   $effect(() => {
     if (isWide) {
       let clone$ = j$(post).clone();
+      clone$ = removeSelectors(clone$);
       container.innerHTML = clone$.find("#table-of-contents").html();
       onMount(() => {
         addOObservers();

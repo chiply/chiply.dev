@@ -28,6 +28,8 @@
  #post-input {
    border: none;
    max-width: 100vw;
+   text-align: left;
+   padding-bottom: 0.6rem;
  }
  #post-input:focus {outline: none;}
 </style>
