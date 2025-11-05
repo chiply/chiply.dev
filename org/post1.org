@@ -1,6 +1,6 @@
 #+TITLE: post1
 #+INCLUDE: "./boilerplate.org"
-#+EXPORT_FILE_NAME: ../src/routes/about/[post]/post1
+#+EXPORT_FILE_NAME: ../src/routes/[post]/post1
 
 * narrative
 

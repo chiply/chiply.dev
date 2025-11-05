@@ -9,7 +9,7 @@
   - [X] add home button to navbar (next to search) (eventually will add iframe for clicking link in index from anywhere)
   - [X] remove tldr title from toc
   - [ ] pull routes out of about
-  - [ ] make title work (eg whatever is displayed in post.org) (simply add title back in, that's sufficient for now)
+  - [X] make title work (eg whatever is displayed in post.org) (simply add title back in, that's sufficient for now)
     
 
   - [-] sample articles

@@ -1,6 +1,6 @@
 #+TITLE: Demo blog post built with emacs org-mode and SvelteKit
 #+INCLUDE: "./boilerplate.org"
-#+EXPORT_FILE_NAME: ../src/routes/about/[post]/post0
+#+EXPORT_FILE_NAME: ../src/routes/[post]/post0
 
 NOTE Most! code org and html boilerplate is imported from boilerplate.org
 NOTE #+OPTIONS: H:6 makes the exporter create outline-containers beyond the default 4 levels (this is needed for folding)
@@ -1293,7 +1293,7 @@ More[fn:3] footnotes[fn:2].
 
 *** minimap
 **** CSS
-#+INCLUDE: "../src/routes/about/[post]/Minimap.svelte" src svelte
+#+INCLUDE: "../src/routes/[post]/Minimap.svelte" src svelte
 * Footnotes
 :PROPERTIES:
 :ID:       388000E7-79D6-4326-8412-116140B2CD1C

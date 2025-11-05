@@ -9,7 +9,7 @@
      postInput.addEventListener("change", async (event) => {
          postTitle = event.target.value;
          try {
-             goto(`/about/${postTitle}`);
+             goto(`/${postTitle}`);
          } catch (error) {
              console.error("Error reading file synchronously:", error.message);
          }
