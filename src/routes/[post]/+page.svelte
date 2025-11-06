@@ -40,7 +40,9 @@
     <div id="pane">
       <ProgressBar />
       <div id="navbar-container">
-        <span id="home-button"><a href="../"><i class="fa-solid fa-house"></i></a></span>
+        <span id="home-button"
+          ><a href="./index"><i class="fa-solid fa-house"></i></a></span
+        >
         <Navbar postTitle={data.postTitle} />
       </div>
       <div id="article-info">
@@ -74,7 +76,12 @@
       <div id="article-info">
         <ArticleNarrow {post} on:mounted={handleArticleMounted} />
       </div>
-      <Modeline {post} {isWide} />
+      <div id="socials-container">
+        <span id="home-link"
+          ><a href="./index">home</a></span
+        >
+        <Modeline {post} {isWide} />
+      </div>
     </div>
   {/if}
 </main>
@@ -83,7 +90,7 @@
   @media (min-width: 1000px) {
     #pane {
       display: grid;
-      grid-template-rows: 0.5% 4% 88.5% 4% 2%;
+      grid-template-rows: 0.5% 4% 85.5% 7% 2%;
       height: 100vh;
       width: 100vw;
     }
@@ -100,7 +107,7 @@
   @media (min-width: 1000px) {
     #navbar-container {
       display: grid;
-      grid-template-columns: 3% 97%;
+      grid-template-columns: 5% 95%;
     }
   }
 
@@ -109,12 +116,16 @@
       display: grid;
       grid-template-columns: 100%;
     }
+    #socials-container {
+      display: grid;
+      grid-template-columns: 10% 90%;
+    }
   }
 
   @media (min-width: 1000px) {
     #article-info {
       display: grid;
-      grid-template-columns: 18% 60% 14.5% 7.5%;
+      grid-template-columns: 18% 56% 19% 8%;
     }
   }
 
@@ -144,6 +155,8 @@
   #home-button {
     text-align: left;
     padding-top: 0.5rem;
+    padding-left: 1rem;
     font-size: 1.5rem;
+    box-sizing: border-box;
   }
 </style>

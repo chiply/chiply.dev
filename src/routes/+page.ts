@@ -8,20 +8,11 @@ import type { PageLoad } from './$types';
 // protocol 'https:'
 // TODO should figure out how to make this server side rendered...
 export const ssr = false;
-export const load: PageLoad = async ({ params }) => {
-  let post0 = await import(`./post0.html?url&raw`);
-  let post1 = await import(`./post1.html?url&raw`);
-  let index = await import(`./index.html?url&raw`);
-
-  const posts = {
-    "post0": post0.default,
-    "post1": post1.default,
-    "index": index.default,
-  }
+export const load: PageLoad = async () => {
+  let homepage = await import(`./index.html?url&raw`);
 
   return {
-	posts: posts,
-    postTitle: params.post
+	homepage: homepage.default,
   };
 
   error(404, 'Not found');

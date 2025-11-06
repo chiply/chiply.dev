@@ -53,3 +53,9 @@
 </script>
 
 <div bind:this={container} id="footnotes"></div>
+
+<style>
+  #footnotes {
+    margin: 1rem;
+  }
+</style>

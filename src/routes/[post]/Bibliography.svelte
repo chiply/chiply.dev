@@ -46,7 +46,16 @@
     if (isWide) {
       container.innerHTML = "";
       // query all a tags with href containing http
-      const bibLinks = post.querySelectorAll('#content a[href*="http"]');
+      const clone = post.cloneNode(true);
+
+      // remove junk from clone
+      const socialsInContent = clone.getElementById("outline-container-socials");
+      if (socialsInContent) socialsInContent.remove();
+
+
+      const bibLinks = clone.querySelectorAll('#content a[href*="http"]');
+
+
       // add bib links to container
       bibLinks.forEach((link, index) => {
         const bibElement = document.createElement("span");
@@ -67,5 +76,6 @@
 <style>
   #bibliography-container {
     overflow-y: auto;
+    margin: 1rem;
   }
 </style>

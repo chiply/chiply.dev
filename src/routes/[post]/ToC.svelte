@@ -101,3 +101,9 @@
 </script>
 
 <div bind:this={container} id="table-of-contents"></div>
+
+<style>
+  #table-of-contents {
+    margin: 1rem;
+  }
+</style>

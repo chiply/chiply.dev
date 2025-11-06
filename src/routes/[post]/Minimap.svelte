@@ -39,10 +39,10 @@
 
       const clone = post.cloneNode(true);
 
-      // remove titlekju
-
-      const titleInContent = clone.querySelector("h1.title");
-      if (titleInContent) titleInContent.remove();
+      const socialsInContent = clone.getElementById(
+        "outline-container-socials",
+      );
+      if (socialsInContent) socialsInContent.remove();
       // remove #table-of-contents
       const tocInContent = clone.getElementById("table-of-contents");
       if (tocInContent) tocInContent.remove();
@@ -78,8 +78,8 @@
       const articleDiv = document.querySelector("#article");
       const scrollTop = articleDiv.scrollTop;
       const scrollLeft = articleDiv.scrollLeft;
-      const viewportWidth = articleDiv.clientWidth;
-      const viewportHeight = articleDiv.clientHeight;
+      const viewportWidth = getAbsoluteWidth(articleDiv);
+      const viewportHeight = getAbsoluteHeight(articleDiv);
 
       viewport.style.top = scrollTop * bodyScale + "px";
       viewport.style.left = scrollLeft * bodyScale + "px";
@@ -106,11 +106,47 @@
     cloneBodyContent();
     updateContentScale();
 
+    function getAbsoluteHeight(el) {
+      // Get the DOM Node if you pass in a string
+      el = typeof el === "string" ? document.querySelector(el) : el;
+
+      var styles = window.getComputedStyle(el);
+      var margin =
+        parseFloat(styles["marginTop"]) + parseFloat(styles["marginBottom"]);
+
+      return Math.ceil(el.offsetHeight + margin);
+    }
+
+    function getAbsoluteWidth(el) {
+      // Get the DOM Node if you pass in a string
+      el = typeof el === "string" ? document.querySelector(el) : el;
+
+      var styles = window.getComputedStyle(el);
+      var margin =
+        parseFloat(styles["marginTop"]) + parseFloat(styles["marginBottom"]);
+
+      return Math.ceil(el.offsetWidth + margin);
+    }
+
     // Clicking on minimap scrolls page
     minimap.addEventListener("click", function (e) {
       const articleDiv = document.querySelector("#article");
-      const minimapWidth = articleDiv.clientWidth * 0.12; // 20% of body width
-      const scale = minimapWidth / articleDiv.clientWidth;
+      const articleWidth = getAbsoluteWidth(articleDiv);
+      const articleHeight = getAbsoluteHeight(articleDiv);
+
+      // TODO -- bad design as this makes it hard to rearrange
+      // everything
+      const progressBarDiv = document.getElementById("progressBar");
+      const navBarDiv = document.getElementById("post-input");
+      const bibliographyDiv = document.getElementById("bibliography-container");
+      const socialsDiv = document.getElementById("modeline-container");
+      const progressBarHeight = getAbsoluteHeight(progressBarDiv);
+      const navBarHeight = getAbsoluteHeight(navBarDiv);
+      const bibliographyHeight = getAbsoluteHeight(bibliographyDiv);
+      const socialsHeight = getAbsoluteHeight(socialsDiv);
+
+      const minimapWidth = articleWidth * 0.12; // 20% of body width
+      const scale = minimapWidth / articleWidth;
 
       const minimap = document.getElementById("minimap-content");
       const rect = minimap.getBoundingClientRect();
@@ -118,11 +154,12 @@
       const y = e.clientY - rect.top;
 
       const scrollX = x / scale;
-      const scrollY = y / scale;
+      const scrollY =
+        y / scale + progressBarHeight + navBarHeight + socialsHeight;
 
       articleDiv.scrollTo({
-        top: scrollY - articleDiv.clientHeight / 2,
-        left: scrollX - articleDiv.clientWidth / 2,
+        top: scrollY - articleHeight / 2,
+        left: scrollX - articleWidth / 2,
         behavior: "smooth",
         block: "nearest",
       });
@@ -148,7 +185,7 @@
   $effect(() => {
     if (isWide) {
       minimap_update();
-        addObservers();
+      addObservers();
     }
   });
 

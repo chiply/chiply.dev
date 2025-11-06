@@ -20,6 +20,7 @@
 <datalist id="posts">
     <option value="post0"></option>
     <option value="post1"></option>
+    <option value="index"></option>
 </datalist>
 
 <input id="post-input" type="text" list="posts" bind:value={postTitle} />
@@ -29,7 +30,6 @@
    border: none;
    max-width: 100vw;
    text-align: left;
-   padding-bottom: 0.6rem;
  }
  #post-input:focus {outline: none;}
 </style>

@@ -105,3 +105,12 @@
 </script>
 
 <div bind:this={container} id="tag-container"></div>
+
+<style>
+  #tag-container {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+</style>
